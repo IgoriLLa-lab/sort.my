@@ -1,6 +1,6 @@
 <?php
 
-namespace Sort;
+namespace sort;
 
 class ArrayPrint
 {

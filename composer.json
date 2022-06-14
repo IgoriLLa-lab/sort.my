@@ -2,7 +2,8 @@
 
   "autoload": {
     "psr-4": {
-      "Sort\\": "Sort//"
+      "Sort\\": "Sort\\",
+      "Search\\": "Search\\"
     }
   },
 
