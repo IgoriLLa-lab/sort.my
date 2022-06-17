@@ -13,7 +13,7 @@ class ArrayPrint
     static public function printArray($array): void
     {
         echo '<pre>';
-        print_r($array, 1);
+        print_r($array);
         echo '</pre>';
     }
 }

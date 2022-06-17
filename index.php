@@ -18,6 +18,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Search\BinarySearch;
+use Search\IndexSequenceSearch;
 use Search\SequenceSearch;
 use Sort\ArrayPrint;
 use Sort\BubbleSort;
@@ -28,8 +29,11 @@ use Sort\SelectSort;
 
 
 //создаем массив случайных чисел (range) и пермешиваем его (shuffle)
-$arrayTest = range(0, 1000); //отсортированный массив
+$arrayTest = range(0, 10); //отсортированный массив
 shuffle($arrayTest); // не отсортированный массив
+
+echo ' Массив данных  -   ';
+ArrayPrint::printArray($arrayTest);
 
 $bubble = BubbleSort::bubbleSort($arrayTest);
 echo ' Пузырьковая сортировка';
@@ -65,16 +69,22 @@ ArrayPrint::printArray($select);
 <br><br>
 
 <?php
-$arrayTestSearch = range(0, 100000); //отсортированный массив
+$arrayTestSearch = range(0, 1000); //отсортированный массив
 //shuffle($arrayTestSearch); // не отсортированный массив
-$numberSearch = 999;
+$numberSearch = 85;
+
+echo ' Массив данных  -   ';
+ArrayPrint::printArray($arrayTestSearch);
 
 SequenceSearch::sequenceSearch($arrayTestSearch, $numberSearch);
-ArrayPrint::printArray($arrayTestSearch);
-BinarySearch::binarySearch($arrayTestSearch, $numberSearch);
-
 ?>
+<br><br>
+<?=BinarySearch::binarySearch($arrayTestSearch, $numberSearch);?>
+<br><br>
 
+<br><br>
+<?=print_r(IndexSequenceSearch::indexSequenceSearch($arrayTestSearch, $numberSearch));?>
+<br><br>
 
 </body>
 </html>

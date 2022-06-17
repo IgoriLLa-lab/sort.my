@@ -4,7 +4,7 @@ namespace Search;
 
 class BinarySearch
 {
-    static public function binarySearch(array $arr, int $num): int
+    static public function binarySearch(array $arr, int $num): bool
     {
         $startIndex = 0;
         $endIndex = count($arr) - 1;
@@ -17,7 +17,7 @@ class BinarySearch
                 echo 'Найден элемент ' . $num;
                 $end = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
                 echo '  Время работы алгоритма бинарного поиска:  ' . round($end, 2) . ' сек.';
-                return $midleIndex;
+                return true;
             }
 
             if ($arr[$midleIndex] > $num) {
@@ -29,6 +29,6 @@ class BinarySearch
         $end = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
         echo " Элемент $num не найден ";
         echo 'Время работы алгоритма бинарного поиска ' . round($end, 1) . ' секунд';
-        return -1;
+        return false;
     }
 }
